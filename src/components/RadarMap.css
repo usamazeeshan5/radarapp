@@ -160,17 +160,266 @@
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+
+/* Extra small devices (phones, 320px to 480px) */
+@media (max-width: 480px) {
   .radar-header {
-    padding: 1rem;
+    padding: 0.75rem;
   }
 
   .radar-header h1 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem 0;
   }
 
   .radar-controls {
-    gap: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .control-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+  }
+
+  .control-group label {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .control-group input[type="range"] {
+    width: 100%;
+  }
+
+  .product-select {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .refresh-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .last-update {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .radar-legend {
+    padding: 0.75rem;
+  }
+
+  .radar-legend h3 {
+    font-size: 1rem;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .legend-items {
+    gap: 0.4rem;
+    justify-content: space-between;
+  }
+
+  .legend-item {
+    font-size: 0.7rem;
+    flex: 0 0 calc(50% - 0.2rem);
+  }
+
+  .legend-color {
+    width: 20px;
+    height: 14px;
+  }
+
+  .radar-info {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .radar-info p {
+    line-height: 1.5;
+  }
+
+  .radar-info br {
+    display: block;
+    content: "";
+    margin-top: 0.25rem;
+  }
+}
+
+/* Small devices (large phones, 481px to 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .radar-header {
+    padding: 0.875rem;
+  }
+
+  .radar-header h1 {
+    font-size: 1.25rem;
+    margin: 0 0 0.875rem 0;
+  }
+
+  .radar-controls {
+    gap: 0.875rem;
+  }
+
+  .control-group label {
+    font-size: 0.875rem;
+  }
+
+  .control-group input[type="range"] {
+    width: 100px;
+  }
+
+  .product-select {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.875rem;
+  }
+
+  .refresh-btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .last-update {
+    font-size: 0.85rem;
+  }
+
+  .radar-legend,
+  .radar-info {
+    padding: 0.875rem;
+  }
+
+  .radar-legend h3 {
+    font-size: 1.05rem;
+  }
+
+  .legend-items {
+    gap: 0.625rem;
+  }
+
+  .legend-item {
+    font-size: 0.8rem;
+  }
+
+  .legend-color {
+    width: 28px;
+    height: 18px;
+  }
+
+  .radar-info {
+    font-size: 0.8rem;
+  }
+}
+
+/* Medium devices (tablets, 768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .radar-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .radar-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .radar-controls {
+    gap: 1.5rem;
+  }
+
+  .control-group label {
+    font-size: 0.9rem;
+  }
+
+  .control-group input[type="range"] {
+    width: 110px;
+  }
+
+  .product-select {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .refresh-btn {
+    padding: 0.55rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .last-update {
+    font-size: 0.9rem;
+  }
+
+  .radar-legend,
+  .radar-info {
+    padding: 1rem 1.5rem;
+  }
+
+  .legend-items {
+    gap: 0.875rem;
+  }
+
+  .legend-item {
+    font-size: 0.85rem;
+  }
+
+  .legend-color {
+    width: 30px;
+    height: 20px;
+  }
+}
+
+/* Touch-friendly enhancements for all mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  .refresh-btn,
+  .product-select {
+    min-height: 44px; /* iOS recommended touch target size */
+  }
+
+  input[type="range"] {
+    height: 44px;
+  }
+
+  .legend-item {
+    padding: 0.25rem 0;
+  }
+}
+
+/* Landscape orientation for phones */
+@media (max-width: 767px) and (orientation: landscape) {
+  .radar-container {
+    overflow-y: auto;
+  }
+
+  .radar-header h1 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .radar-controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .control-group {
+    flex: 1 1 auto;
+    min-width: fit-content;
+  }
+
+  .refresh-btn {
+    width: auto;
+  }
+
+  .radar-legend {
+    padding: 0.5rem;
+  }
+
+  .radar-legend h3 {
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
   }
 
   .legend-items {
@@ -178,16 +427,43 @@
   }
 
   .legend-item {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .legend-color {
-    width: 25px;
-    height: 16px;
+    width: 20px;
+    height: 14px;
+  }
+
+  .radar-info {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Prevent zoom on input focus for iOS */
+@media screen and (max-width: 767px) {
+  select,
+  input[type="range"] {
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+}
+
+/* Safe area insets for notched devices (iPhone X and newer) */
+@supports (padding: max(0px)) {
+  .radar-header {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(1rem, env(safe-area-inset-top));
   }
 
   .radar-legend,
   .radar-info {
-    padding: 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .radar-info {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }

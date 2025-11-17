@@ -49,12 +49,52 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: -webkit-fill-available; /* Fix for mobile browsers */
   overflow: hidden;
+  /* Disable pull-to-refresh on mobile */
+  overscroll-behavior-y: none;
+  /* Improve touch scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  /* Prevent text selection on touch devices */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for specific elements */
+.radar-info,
+.legend-item,
+.last-update {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+/* Responsive typography */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  h1 {
+    font-size: 2.2em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.8em;
+  }
 }
 
 button {
